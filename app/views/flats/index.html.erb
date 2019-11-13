@@ -1,0 +1,19 @@
+<h1>All our flats(<%= Flat.count %>)</h1>
+<div class="container">
+  <div class="row d-flex flex-row justify-content-around">
+  <% @flats.each do |flat| %>
+  <div class="card col-3">
+      <%= link_to flat.name, flat_path(flat) %>
+      <%= flat.address %>
+      <p class="text-overlay">
+        <%= flat.description %>
+      </p>
+      <%= flat.price_per_night %> €
+      <%= flat.number_of_guests  %>
+      </div>
+    <% end %>
+
+    <%= link_to "add a flat", new_flat_path %>
+  </div>
+
+</div>
